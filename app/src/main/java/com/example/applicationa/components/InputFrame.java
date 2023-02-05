@@ -29,10 +29,10 @@ public class InputFrame extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
+    protected void onDestroy() {
         receiverJob.interrupt();
         unregisterReceiver(receiver);
-        super.onStop();
+        super.onDestroy();
     }
 
     private void setView() {

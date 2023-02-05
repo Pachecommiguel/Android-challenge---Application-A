@@ -43,7 +43,9 @@ public class SenderConverter extends BroadcastReceiver implements Runnable {
                 run();
             }
 
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+            // Expected if current thread is waiting on "queue.take()" and gets interrupted
+        }
     }
 
     private boolean isInterrupted() {
